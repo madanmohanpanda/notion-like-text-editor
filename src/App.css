@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    background-color: #1a203d;
+    color: white;
+    max-width: calc(100vw - 2rem);
+}
+
+.container{
+    min-height: 100%;
+    min-width: 100%;
+    margin: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+center{
+    padding-bottom: 2rem;
+}
+.flex{
+    display: flex;
+}
+.options{
+   display: flex;
+   gap: 2px;
+ 
+}
+
+.tiptap{
+    background-color: rgb(24, 17, 43);
+   
+    padding: 1rem .8rem;
+    margin-right: 1erm;
+    border-radius: .5rem;
+}
+
+.ProseMirror{
+    margin-right: 2rem;
+}
