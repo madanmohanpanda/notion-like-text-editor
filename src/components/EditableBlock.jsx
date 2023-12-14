@@ -1,4 +1,4 @@
-import React, {createRef, useState, useEffect} from 'react'
+import React, {createRef, useState} from 'react'
 import ContentEditable from 'react-contenteditable'
 
 const EditableBlock = ({data}) => {
