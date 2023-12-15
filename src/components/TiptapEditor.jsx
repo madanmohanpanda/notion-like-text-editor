@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { EditorContent, useEditor ,FloatingMenu,BubbleMenu } from "@tiptap/react";
 import { StarterKit } from "@tiptap/starter-kit";
 import TipTapMenuBar from "./TiptapMenubar";
@@ -6,6 +6,9 @@ import Document from '@tiptap/extension-document'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
 import Typography from '@tiptap/extension-typography'
+import Commands from "../suggestion/commands";
+import getSuggestionItems from "../suggestion/items";
+import renderItems from "../suggestion/renderItems";
 
 
 
@@ -13,7 +16,7 @@ import Typography from '@tiptap/extension-typography'
 
 const TipTapEditor = () => {
   const [editorState, setEditorState] = React.useState(
-    `<h1>Title</h1>`
+    `<h1>To test typography feature type these: ---, 4^5 etc.</h1>`
   );
 
 
@@ -26,6 +29,12 @@ const TipTapEditor = () => {
       Paragraph,
       Text,
       Typography,
+      Commands.configure({
+        suggestion: {
+          items: getSuggestionItems,
+          render: renderItems
+        }
+      })
     ],
     content: editorState,
     onUpdate: ({ editor }) => {
@@ -33,8 +42,7 @@ const TipTapEditor = () => {
     },
   });
   
-
-
+  
 
   return (
     <>
@@ -45,7 +53,7 @@ const TipTapEditor = () => {
         </BubbleMenu>
          }
         
-      </div>
+      </div> 
 
       <div className="prose prose-sm w-full mt-4">
         <EditorContent editor={editor} />

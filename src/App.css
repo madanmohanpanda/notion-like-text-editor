@@ -40,3 +40,14 @@ center{
 .ProseMirror{
     margin-right: 2rem;
 }
+
+.items{
+    display: flex;
+    flex-direction: column;
+    
+}
+.item{
+    padding: .3rem;
+    font-size: 1rem;
+
+}
